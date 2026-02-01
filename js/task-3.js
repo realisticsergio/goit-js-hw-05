@@ -1,4 +1,4 @@
-//function getElementWidth(content,padding,border) {
+////function getElementWidth(content,padding,border) {
   //  const contentWidth = parseFloat(content);
   //  const paddingWidth = parseFloat(padding);
   //  const borderWidth = parseFloat(border);
@@ -26,44 +26,132 @@
 //console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
 //console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
 
-function filterArray(numbers, value) {
-  let myItems = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > value) {
-      myItems.push(numbers[i]);
-    }
-  }
-   return myItems;
-}
+//function filterArray(numbers, value) {
+ // let myItems = [];
+ // for (let i = 0; i < numbers.length; i++) {
+ //   if (numbers[i] > value) {
+ //     myItems.push(numbers[i]);
+ //   }
+ // }
+ //  return myItems;
+//}
 
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+//console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+//console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+//console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+//console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+//console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
 
-const profile = {
-  username: "Jacob",
-  playTime: 300,
+//const profile = {
+ // username: "Jacob",
+ // playTime: 300,
 
-  changeUsername(newName) {
-    this.username = newName;
-  },
+ // changeUsername(newName) {
+ //  this.username = newName;
+ // },
 
-  updatePlayTime(hours) {
-    this.playTime += hours;
-  },
+ // updatePlayTime(hours) {
+ //   this.playTime += hours;
+ // },
 
-  getInfo() {
-    return `${this.username} has ${this.playTime} active hours!`
-  },
+ // getInfo() {
+ //   return `${this.username} has ${this.playTime} active hours!`
+ // },
+//};
+
+//console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+//profile.changeUsername("Marco");
+//console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+//profile.updatePlayTime(20);
+//console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+// !=========================================================================!
+
+const sortByDescendingFriendCount = (users) => {
+  return users.toSorted((a, b) => {
+    return b.friends.length - a.friends.length;
+  });
 };
 
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
+console.log(
+  sortByDescendingFriendCount([
+    {
+      name: "Moore Hensley",
+      friends: ["Sharron Pace"],
+      gender: "male"
+    },
+    {
+      name: "Sharlene Bush",
+      friends: ["Briana Decker", "Sharron Pace"],
+      gender: "female"
+    },
+    {
+      name: "Ross Vazquez",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      gender: "male"
+    },
+    {
+      name: "Elma Head",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      gender: "female"
+    },
+    {
+      name: "Carey Barr",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      gender: "male"
+    },
+    {
+      name: "Blackburn Dotson",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      gender: "male"
+    },
+    {
+      name: "Sheree Anthony",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      gender: "female"
+    }
+  ])
+);
 
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+// [
+//   {
+//     name: "Ross Vazquez",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Elma Head",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     gender: "female"
+//   },
+//   {
+//     name: "Moore Hensley",
+//     friends: ["Sharron Pace"],
+//     gender: "male"
+//   }
+// ]
